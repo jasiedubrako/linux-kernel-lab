@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Mount essential virtual filesystems
+mount -t proc  none /proc
+mount -t sysfs none /sys
+mount -t devtmpfs none /dev 2>/dev/null || mdev -s
+
+echo ""
+echo "============================================"
+echo "  Linux $(uname -r) | ARM64 | QEMU virt"
+echo "============================================"
+echo ""
+echo "Type 'poweroff' to exit QEMU"
+echo ""
+
+exec /bin/sh
