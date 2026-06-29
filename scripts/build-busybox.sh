@@ -55,7 +55,7 @@ cd "busybox-${BUSYBOX_VERSION}"
 echo "[*] Configuring BusyBox (static build)..."
 make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- defconfig
 sed -i 's/# CONFIG_STATIC is not set/CONFIG_STATIC=y/' .config
-make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- olddefconfig
+yes "" | make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- oldconfig
 
 
 # --- BUILD + INSTALL ---
